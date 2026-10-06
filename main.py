@@ -1,5 +1,15 @@
+import os
 import streamlit as st
 
+port = int(os.environ.get("PORT", 8501))
+
+# ページ設定
+st.set_page_config(page_title="My Streamlit App", layout="wide")
+
+# 起動確認
+st.write(f"Streamlit is running on port {port}")
+
+# メインUI
 st.title("My Streamlit App Launcher")
 
 option = st.selectbox(
@@ -18,3 +28,4 @@ elif option == "Second App":
 elif option == "Third App":
     st.header("Third App")
     st.write("ここに 02_my_3_app.py の内容を書く")
+
