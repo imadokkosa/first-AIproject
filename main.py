@@ -1,12 +1,20 @@
 import streamlit as st
-import subprocess
 
 st.title("My Streamlit App Launcher")
 
 option = st.selectbox(
     "Choose an app to run:",
-    ["00_my_first_app.py", "01_my_second_app.py", "02_my_3_app.py"]
+    ["First App", "Second App", "Third App"]
 )
 
-if st.button("Run selected app"):
-    subprocess.run(["streamlit", "run", option])
+if option == "First App":
+    st.header("First App")
+    st.write("ここに 00_my_first_app.py の内容を書く")
+
+elif option == "Second App":
+    st.header("Second App")
+    st.write("ここに 01_my_second_app.py の内容を書く")
+
+elif option == "Third App":
+    st.header("Third App")
+    st.write("ここに 02_my_3_app.py の内容を書く")
