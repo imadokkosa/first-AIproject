@@ -9,4 +9,5 @@ COPY . .
 
 EXPOSE 8501
 
-CMD ["streamlit", "run", "main.py", "--server.port=$PORT", "--server.address=0.0.0.0"]
+CMD ["bash", "-c", "streamlit run main.py --server.port=$PORT --server.address=0.0.0.0"]
+
