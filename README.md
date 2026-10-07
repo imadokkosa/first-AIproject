@@ -1,3 +1,24 @@
+# 4.PDFに質問しよう（後編）
+- RetrievalはDBｋら文脈を判断し、Promptの指示を読み込んで、ChatGPT APIを呼び出して回答を行う便利なメソッド
+- RetrieverはRetrievalQAがベクトルDBの検索をする。
+- Retriever(search_type)ではsimilarityはベクトルDBの距離関数で類似度を計算、mmrは回答の重複を防ぐためにレスポンス内の似ている構文を削除する。similarity_score_thresholdは類似度の閾値設定
+- Retriever(search_kwargs)ではkが検索にヒットする文書の数設定、score_thresholdはsimilarity_score_thresholdとセットで類似度設定、filterは各データでmetadataを設定することで、取得する文脈を調整できる。
+- ConversationalRetrievalChainを使えば質問の回答の後にその内容を組み込んでさらに質問できる。
+
+# 3.PDFに質問しよう（前編）
+- Text Splitter で文章を分割。検索精度の向上、トークン削減、ハルシネーション防止が目的。
+- 文章分割後、エンベディングを行う。言葉の数値化のことである。距離による類似度判定、表記ゆれ対応のために行う。
+- promptでAIへ指示を出せる。
+- エンベディングをした後、情報をベクトルDBに載せる。今回はQdrantというメソッドを決める。ベクトルDBはエンベディングを行う際にベクトルDB内にある複数のエンベディングから類似性のあるものを高速で検索できる。
+
+## ページ遷移
+-  st.sidebar.radio("Go to", ["A", "B"])でサイドバーにAとBに移動するラジオボタンが表示させる。
+- if文で画面にそのページを表示させるかを決める。
+
+## PDFのuploadと読み取り
+- データのuploadをする際はst.file_uploader()で出来る。かっこの中に任意のパラメーターを入力することで挙動をコントロールする。今回は拡張子を指定するtypeでpdfを指定した。
+- PdfReaderでPDFファイルの読み取りができる。langchainにはDocument Loaderという汎用的な読み取りメソッドがあるがあまり使われない。
+
 # 2.初めてのAIアプリを作ろう
 - LLMはinvoke()で呼び出す
 - Wedページの本文を取得するにはBeautifulSoupを使う。
