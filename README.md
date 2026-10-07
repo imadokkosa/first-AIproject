@@ -1,3 +1,12 @@
+# 2.初めてのAIアプリを作ろう
+- LLMはinvoke()で呼び出す
+- Wedページの本文を取得するにはBeautifulSoupを使う。
+- エラー対処はとりあえずexcept:st.write('something wrong')で行う
+- containerを使うとUIが整理される
+- response.encoding = response.apparent_encodingで自動でサイトの文字コードを推測してくれる。
+
+
+
 # 1. 最初のAIチャットアプリを作ろう
 
 ## Streamlit と LangChain の役割
