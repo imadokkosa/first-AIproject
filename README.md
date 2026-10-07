@@ -3,7 +3,7 @@
 - Wedページの本文を取得するにはBeautifulSoupを使う。
 - エラー対処はとりあえずexcept:st.write('something wrong')で行う
 - containerを使うとUIが整理される
-- response.encoding = response.apparent_encodingで自動でサイトの文字コードを推測してくれる。
+- response.encoding = response.apparent_encodingで自動でサイトの文字コードを推測してくれる。ただし、統計的推理なので精度は低い。
 
 
 
